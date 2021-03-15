@@ -42,7 +42,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: R2100
+        TNAME: MI-MINI
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -93,7 +93,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=y" >> configs/templates/$TNAME.config   #使用FFMPEG新版本
         echo "CONFIG_FIRMWARE_INCLUDE_XUPNPD=n" >> configs/templates/$TNAME.config       #删除用于IPTV的XUPNPD
         echo "CONFIG_FIRMWARE_INCLUDE_DOGCOM=n" >> configs/templates/$TNAME.config       #删除用于Drcom的工具DOGCOM
-        echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >> configs/templates/$TNAME.config  #删除SS plus+
+        echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> configs/templates/$TNAME.config  #删除SS plus+
         echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> configs/templates/$TNAME.config #删除DNSFORWARDER
         echo "CONFIG_FIRMWARE_INCLUDE_VLMCSD=n" >> configs/templates/$TNAME.config       #删除用于KMS的工具VLMCSD
         echo "CONFIG_FIRMWARE_INCLUDE_TTYD=n" >> configs/templates/$TNAME.config         #删除网页终端模拟器TTYD
